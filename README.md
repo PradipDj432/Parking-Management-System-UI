@@ -1,27 +1,25 @@
-# Parking Management System
+# Parking Management System UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.3.
+The Parking Management System UI is a modern and user-friendly front-end application built with Angular 15. This interface provides a seamless and intuitive experience for users to interact with the Parking Management System's features and functionalities.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Dashboard**: Access a comprehensive dashboard that displays real-time data on parking space availability, occupancy rates, and transaction summaries.
 
-## Code scaffolding
+- **User Authentication**: Secure user authentication and authorization mechanisms to ensure access control for different user roles.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Space Booking**: Effortlessly reserve parking spaces for registered users, including the ability to select preferred locations and time slots.
 
-## Build
+- **Payment Integration**: Seamless integration with payment gateways to process parking fees and fines securely.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Interactive Maps**: Visualize parking space locations and navigate through parking facilities with interactive maps.
 
-## Running unit tests
+- **Reports**: Generate and view detailed reports on parking usage, payment history, and user activity.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation and Usage
 
-## Running end-to-end tests
+To set up the Parking Management System UI locally, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Clone this repository to your local machine:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   git clone https://github.com/PradipDj432/Parking-Management-System-UI.git
