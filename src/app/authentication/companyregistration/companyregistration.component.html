@@ -1,0 +1,14 @@
+<h2>Company Registration</h2>
+<br>
+<br>
+<form #companyregiform="ngForm">
+  <input type="text" name="name" placeholder="Company Name" id="name" ngModel required=""><br><br>
+  <input type="email" name="email" placeholder="Company EmailID" id="email" ngModel required=""><br><br>
+  <input type="number" name="contact" placeholder="Company Contact Number" id="contact" ngModel required=""><br><br>
+  <input type="password" name="password" placeholder="Enter Password" id="password" ngModel required=""><br><br>
+  <input type="password" name="repassword" placeholder="Re-Enter Password" id="repassword" ngModel required=""><br><br>
+  <button type="submit" (click)="getregistration(companyregiform.value)">Registration</button>
+  <button (click)="backtologin()">LogIN</button>
+</form>
+<br>
+<div>{{validpass}}</div>

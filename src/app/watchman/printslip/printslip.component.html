@@ -1,0 +1,115 @@
+<div class="container-fluid g-0">
+    <app-watchmanheader></app-watchmanheader>
+</div>
+<div class="flex-container">
+    <div class="flex-item1"> <!-- First vertical part -->
+      <div>
+        <ul>
+        <li>
+        <div>
+          <a (click)="getdashboard()">Dashboard</a>
+        </div>
+        </li>
+        <li>
+        <div>
+          <a (click)="getaddbooking()">Add Booking</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getviwebooking()">Viwe Booking</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getcharges()">Charges</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getprintslip()">Entry & Exit</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex-item2"> <!-- Second vertical part -->
+      <h2>Watchman PrintSlip</h2>
+      <br><br>
+      <input type="text" name="bookingid" id="bookingid" placeholder="Enter Booking ID..." #query>
+      <button (click)="SearchBookingIdTS(query.value)">Search</button><br><br>
+      <div *ngIf = "objslipstatus" class="clsprebookcard">
+        <div class="clsprebook">
+          <a>Booking ID : </a>{{objprintinfo.bookingid}}<br>
+          <a>User Name : </a>{{objprintinfo.username}}<br>
+          <a>Spot No : </a>{{objprintinfo.slotno}}<br>
+          <a>Entry Time : </a>{{objprintinfo.entrytime}}<br>
+          <a>Exit Time : </a>{{objprintinfo.exittime}}<br>
+          <a>Vehicle Plate : </a>{{objprintinfo.vehicleplate}}<br>
+          <a>Vehicle Type : </a>{{objprintinfo.vehicletype}}<br>
+          <a>Charge : </a>{{parkingcharge}}<br>
+          <button *ngIf="objprintinfo.parkingstatus==1" (click)="GoIntoLive({bookingid:objprintinfo.bookingid})">Exit</button>
+          <button *ngIf="objprintinfo.parkingstatus==0" (click)="GoIntoLive({bookingid:objprintinfo.bookingid})">Entry</button>
+          <button (click)="HidePrintSlipBox()">Cancel</button>
+        </div>
+      </div><br><br>
+      <h4>Live-Booking</h4>
+      <table>
+        <tr>
+          <th class="clstbltd">Spot No</th>
+          <th class="clstbltd">User Name</th>
+          <th class="clstbltd">Entry Time</th>
+          <th class="clstbltd">Exit Time</th>
+          <th class="clstbltd">Vehicle Type</th>
+          <th class="clstbltd">Vehicle Plate</th>
+          <th class="clstbltd">Contact No</th>
+          <th class="clstbltd">Booking ID</th>
+          <th class="clstbltd">Go Exit</th>
+        </tr>
+        <ng-container *ngFor="let obj of objviwebooking">
+        <tr *ngIf = "obj.parkingstatus==1">
+          <td class="clstbltd">{{obj.slotno}}</td>
+          <td class="clstbltd">{{obj.username}}</td>
+          <td class="clstbltd">{{obj.entrytime}}</td>
+          <td class="clstbltd">{{obj.exittime}}</td>
+          <td class="clstbltd">{{obj.vehicletype}}</td>
+          <td class="clstbltd">{{obj.vehicleplate}}</td>
+          <td class="clstbltd">{{obj.contactno}}</td>
+          <td class="clstbltd">{{obj.bookingid}}</td>
+          <td class="clstbltd" (click)="GoToPrintSlipS({obj1:obj})">Exit</td>
+        </tr>
+        </ng-container>
+      </table>
+      
+      <br><br>
+
+      <h4>Pre-Booking</h4>
+      <table>
+        <tr>
+          <th class="clstbltd">Spot No</th>
+          <th class="clstbltd">User Name</th>
+          <th class="clstbltd">Entry Time</th>
+          <th class="clstbltd">Exit Time</th>
+          <th class="clstbltd">Vehicle Type</th>
+          <th class="clstbltd">Vehicle Plate</th>
+          <th class="clstbltd">Contact No</th>
+          <th class="clstbltd">Booking ID</th>
+          <th class="clstbltd">Go Live</th>
+        </tr>
+        <ng-container *ngFor="let obj of objviwebooking">
+        <tr *ngIf = "obj.parkingstatus==0">
+          <td class="clstbltd">{{obj.slotno}}</td>
+          <td class="clstbltd">{{obj.username}}</td>
+          <td class="clstbltd">{{obj.entrytime}}</td>
+          <td class="clstbltd">{{obj.exittime}}</td>
+          <td class="clstbltd">{{obj.vehicletype}}</td>
+          <td class="clstbltd">{{obj.vehicleplate}}</td>
+          <td class="clstbltd">{{obj.contactno}}</td>
+          <td class="clstbltd">{{obj.bookingid}}</td>
+          <td class="clstbltd" (click)="GoIntoLive({bookingid:obj.bookingid})">Entry</td>
+        </tr>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+  

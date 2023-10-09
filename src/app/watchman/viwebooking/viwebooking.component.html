@@ -1,0 +1,64 @@
+<div class="container-fluid g-0">
+    <app-watchmanheader></app-watchmanheader>
+</div>
+<div class="flex-container">
+    <div class="flex-item1"> <!-- First vertical part -->
+      <div>
+        <ul>
+        <li>
+        <div>
+          <a (click)="getdashboard()">Dashboard</a>
+        </div>
+        </li>
+        <li>
+        <div>
+          <a (click)="getaddbooking()">Add Booking</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getviwebooking()">Viwe Booking</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getcharges()">Charges</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getprintslip()">Entry & Exit</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex-item2"> <!-- Second vertical part -->
+      <h2>Watchman ViweBooking</h2>
+      <table>
+        <tr>
+          <th class="clstbltd">Spot No</th>
+          <th class="clstbltd">User Name</th>
+          <th class="clstbltd">Entry Time</th>
+          <th class="clstbltd">Exit Time</th>
+          <th class="clstbltd">Vehicle Type</th>
+          <th class="clstbltd">Vehicle Plate</th>
+          <th class="clstbltd">Contact No</th>
+          <th class="clstbltd">Booking ID</th>
+          <th class="clstbltd">Parking status</th>
+        </tr>
+        <tr *ngFor = "let obj of objviwebooking">
+          <td class="clstbltd">{{obj.slotno}}</td>
+          <td class="clstbltd">{{obj.username}}</td>
+          <td class="clstbltd">{{obj.entrytime}}</td>
+          <td class="clstbltd">{{obj.exittime}}</td>
+          <td class="clstbltd">{{obj.vehicletype}}</td>
+          <td class="clstbltd">{{obj.vehicleplate}}</td>
+          <td class="clstbltd">{{obj.contactno}}</td>
+          <td class="clstbltd">{{obj.bookingid}}</td>
+          <td class="clstbltd">{{obj.parkingstatus}} </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  

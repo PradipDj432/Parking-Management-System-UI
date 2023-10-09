@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-item1 {
+    flex-basis: 200px;
+  
+  }
+  .flex-item2{
+    flex-basis:88%;
+  }
+  

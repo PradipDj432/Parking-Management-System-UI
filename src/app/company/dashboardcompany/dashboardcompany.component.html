@@ -1,0 +1,52 @@
+<div class="container-fluid g-0">
+    <app-headercompany></app-headercompany>
+</div>
+<div class="flex-container">
+    <div class="flex-item1"> <!-- First vertical part -->
+      <div>
+        <ul>
+        <li>
+        <div>
+          <a (click)="getdashboard()">Dashboard</a>
+        </div>
+        </li>
+      <li>
+        <div>
+          <a (click)="getreports()">Reports</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="geteditprofile()">Edit Profile</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex-item2"> <!-- Second vertical part -->
+      <h2>Company Dashboard</h2>
+      <table>
+        <tr>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalParkingSlots}}</h5><p>Total Parking Slots</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalTwoWheelerParkingSlots}}</h5><p>Two Wheeler Parking Slots</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalFourWheelerParkingSlots}}</h5><p>Four Wheeler Parking Slots</p></td>
+        </tr>
+        <tr>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalParkingSlots - watchmandashboard.TotalInUseParkingSlots}}</h5><p>Total Available Slots</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalTwoWheelerParkingSlots - watchmandashboard.TotalInUseTwoWheelerParkingSlots}}</h5><p>Available Two Wheeler Slots</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalFourWheelerParkingSlots - watchmandashboard.TotalInUseFourWheelerParkingSlots}}</h5><p>Available Four Wheeler Slots</p></td>
+        </tr>
+        <tr>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalInUseParkingSlots}}</h5><p>Total In-Use Parking Slots</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalInUseTwoWheelerParkingSlots}}</h5><p>In-Use Two Wheeler Slots</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalInUseFourWheelerParkingSlots}}</h5><p>In-Use Four Wheeler Slots</p></td>
+        </tr>
+        <tr>
+          <td class="clstbltd"><h5>{{watchmandashboard.TotalRevenue}}</h5><p>Total Revenue</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.TwoWheelerParkingCharge}}</h5><p>Two Wheeler Parking Charges</p></td>
+          <td class="clstbltd"><h5>{{watchmandashboard.FourWheelerParkingCharge}}</h5><p>Four Wheeler Parking Charges</p></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+<div class="loginmain">
+<div class="container" id="example1">
+  <br>
+  <form #loginform="ngForm" (submit)="printSelectedOption(loginform.value)" >
+     <select #sd1 name="role" ngModel class="form-select" >
+      <option value="" disabled selected>Select Role</option>
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+    <br>
+  
+    <input type="email" name="email" id="email"  class="form-control" placeholder="Enter Your EmailID" ngModel>
+    <br>
+    <input type="password" name="password" id="password" class="form-control" placeholder="Enter Your Password" ngModel>
+    <br>
+    <button type="submit" class="btn btn-success">Login</button>
+    <!-- <submit (click)="printSelectedOption(sd1.value)">Print Selected Option</submit> -->
+  </form>
+  <br>
+  <button #fp name="forgetpass" (click)="getpassword()" class="btn btn-success">Forget Password?</button>
+  <br>
+  <br>
+  <pre style="font-weight: bolder;">New User? <Button (click)="getregistration()" class="btn btn-success">Registration</Button></pre>
+  <select *ngIf="status" #sd2 name="regirole" (change)="setregistration(sd2.value)" class="form-select">
+    <option *ngFor="let option of regioptions" [value]="option">{{ option }}</option>
+  </select>
+  <!-- <submit (click)="setregistration(sd2.value)">Print Selected Option</submit> -->
+
+  <h5>{{valid}}</h5>
+</div>
+</div>

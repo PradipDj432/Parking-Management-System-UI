@@ -1,0 +1,23 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-item1 {
+    flex-basis: 200px;
+  
+  }
+  .flex-item2{
+    flex-basis:88%;
+  }
+  .clsprebook
+{
+    background-color: dodgerblue;
+    height: 230px;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: large;
+}
+  

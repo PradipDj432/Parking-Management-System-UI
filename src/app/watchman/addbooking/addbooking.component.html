@@ -1,0 +1,76 @@
+<div class="container-fluid g-0">
+    <app-watchmanheader></app-watchmanheader>
+</div>
+<div class="flex-container">
+    <div class="flex-item1"> <!-- First vertical part -->
+      <div>
+        <ul>
+        <li>
+        <div>
+          <a (click)="getdashboard()">Dashboard</a>
+        </div>
+        </li>
+        <li>
+        <div>
+          <a (click)="getaddbooking()">Add Booking</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getviwebooking()">Viwe Booking</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getcharges()">Charges</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getprintslip()">Entry & Exit</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex-item2"> <!-- Second vertical part -->
+      <h2>Watchman AddBooking</h2>
+      <select #sd2 name="regirole" (change)="setUsertypeTS(sd2.value)">
+        <option *ngFor="let option of usertype" [value]="option" >{{ option }}</option>
+      </select>
+      <br><br>
+      <form #bookingform="ngForm" (submit)="bookinginfo(bookingform.value)" *ngIf="!status">
+        Entry Time : <input type="time" name="entrytime" id="entrytime" ngModel>
+        Exit Time : <input type="time" name="exittime" id="exittime" ngModel><br><br>
+        <label>
+            Select Vehicle Type : <input type="radio" name="vehicle" value=0 ngModel>Two wheeler
+        </label>
+        <label>
+          <input type="radio" name="vehicle" value=1 ngModel>  Four wheeler
+        </label><br><br>
+        <label>
+          Vehicle Plate Number : <input type="text" name="vehicleplate" ngModel>
+        </label><br><br>
+        <label>
+          Enter EmilID : <input type="email" name="email" ngModel>
+        </label><br><br>
+        <button type="submit">Search Spot</button>
+      </form>
+
+      <form *ngIf="status" #userregiform="ngForm">
+        <input type="text" name="name" placeholder="Enter Your Name" id="name" ngModel required=""><br><br>
+        <input type="email" name="email" placeholder="Enter Your EmailID" id="email" ngModel required=""><br><br>
+        <input type="number" name="contact" placeholder="Enter Your Contact Number" id="contact" ngModel required=""><br><br>
+        <input type="password" name="password" placeholder="Enter Your Password" id="password" ngModel required=""><br><br>
+        <input type="password" name="repassword" placeholder="Re-Enter your Password" id="repassword" ngModel required=""><br><br>
+        <button type="submit" (click)="getregistration(userregiform.value)">Registration</button>
+      </form>
+      <br><br>
+      <h3>Available Spots</h3>
+        <div class="clsofcollectionspots">
+          <div *ngFor="let num of avariblespots" class="clsofspots" (click)="getselectedspot({spotno : num})">{{ num }}</div>
+        </div>
+        <p>{{done}}</p>
+    </div>
+  </div>
+  

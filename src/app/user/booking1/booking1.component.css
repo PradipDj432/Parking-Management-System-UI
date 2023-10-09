@@ -1,0 +1,32 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-item1 {
+    flex-basis: 200px;
+  
+  }
+  .flex-item2{
+    flex-basis:88%;
+  }
+  .companybox
+{
+    background-color: dodgerblue;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    padding-top: 30px;
+    font-size: large;
+}
+.clsofcollectionspots
+{
+    display:flex;
+    margin-left: 5px;
+}
+.clsofspots
+{
+  margin-left: 10px;
+  background-color: paleturquoise;
+}

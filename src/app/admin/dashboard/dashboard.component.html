@@ -1,0 +1,53 @@
+<div class="container-fluid g-0">
+    <app-adminheader></app-adminheader>
+  </div>
+  
+  <div class="flex-container">
+    <div class="flex-item1"> <!-- First vertical part -->
+      <div>
+        <ul>
+        <li>
+        <div>
+          <a (click)="getdashboard()">Dashboard</a>
+        </div>
+        </li>
+        <li>
+        <div>
+          <a (click)="getcompanyinfo()">Company Info</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getsearchvehical()">Search Vehical</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="getmanageaccount()">Manage Account</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex-item2"> <!-- Second vertical part -->
+      <h2>Admin Dashboard</h2>
+      <table>
+        <tr>
+          <td class="clstbltd"><h5>{{admindashboard.totalparking}}</h5><p>Total Parking</p></td>
+          <td class="clstbltd"><h5>{{admindashboard.totalfourwheeler}}</h5><p>Total Four Wheeler Parking</p></td>
+          <td class="clstbltd"><h5>{{admindashboard.totaltwowheeler}}</h5><p>Total Two Wheeler Parking</p></td>
+        </tr>
+        <tr>
+          <td class="clstbltd"><h5>{{admindashboard.totalparking - admindashboard.totalinuse}}</h5><p>Total InUse Parking</p></td>
+          <td class="clstbltd"><h5>{{admindashboard.totalfourwheeler - admindashboard.totalinusefour}}</h5><p>Total Available Four Wheeler Parking</p></td>
+          <td class="clstbltd"><h5>{{admindashboard.totaltwowheeler - admindashboard.totalinusetwo}}</h5><p>Total Available Two Wheeler Parking</p></td>
+        </tr>
+        <tr>
+          <td class="clstbltd"><h5>{{admindashboard.totalinuse}}</h5><p>Total Parking</p></td>
+          <td class="clstbltd"><h5>{{admindashboard.totalinusefour}}</h5><p>Total InUse Four Wheeler Parking</p></td>
+          <td class="clstbltd"><h5>{{admindashboard.totalinusetwo}}</h5><p>Total InUse Two Wheeler Parking</p></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  

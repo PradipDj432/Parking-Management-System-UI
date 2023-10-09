@@ -1,0 +1,65 @@
+<div class="container-fluid g-0">
+    <app-userheader></app-userheader>
+</div>
+<div class="flex-container">
+    <div class="flex-item1"> <!-- First vertical part -->
+      <div>
+        <ul>
+        <li>
+        <div>
+          <a (click)="getdashboard()">Dashboard</a>
+        </div>
+        </li>
+      <li>
+        <div>
+          <a (click)="getviwebooking()">Viwe Booking</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="geteditprofile()">Edit Profile</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex-item2"> <!-- Second vertical part -->
+      <h2>User Dashboard</h2>
+      
+      <div>
+        <br>
+        <input type="text" placeholder="Search Company...." #query>
+        <button (click)="getsearchcompanyTS(query.value)">Search</button>
+        <br><br>
+      </div>
+      <div>
+        <h4>Search Company</h4>
+        <div *ngFor="let box1 of searchcompany"  (click)="navigateTobooking1({ email: box1.companyemail, name: box1.companyname })" class="companybox">
+          <a class="clscompanyname">Comapny Name :</a>{{box1.companyname}}<br>
+          <a class="clscompanyaddress">Comapny Address :</a>{{box1.companyaddress}}<br>
+          <a class="clscompanyemail">Comapny EmailID :</a>{{box1.companyemail}}<br>
+      </div>
+      </div>
+      <div>
+        <h4>All Company</h4>
+        <div *ngFor="let box2 of allcompany" (click)="navigateTobooking1({ email: box2.companyemail, name: box2.companyname})" class="companybox">
+          <a class="clscompanyname">Comapny Name : </a>{{box2.companyname}}<br>
+          <a class="clscompanyaddress">Comapny Address : </a>{{box2.companyaddress}}<br>
+          <a class="clscompanyemail">Comapny EmailID : </a>{{box2.companyemail}}<br>
+        </div>
+      </div>
+      <h4>Your Booking</h4>
+      <div class="clsprebookcard">
+        <div *ngFor="let box of prebookcard" class="clsprebook">
+          <a>Company Name : </a>{{box.companyname}}<br>
+          <a>Address : </a>{{box.address}}<br>
+          <a>Spot No : </a>{{box.slotno}}<br>
+          <a>Date  : </a>{{box.bookdate}}<br>
+          <a>Entry Time : </a>{{box.entrytime}}<br>
+          <a>Exit Time : </a>{{box.exittime}}<br>
+          <a>Booking ID : </a>{{box.bookingid}}<br>
+          
+        </div>
+      </div>
+  </div>
+  

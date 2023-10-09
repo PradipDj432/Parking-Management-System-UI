@@ -1,0 +1,74 @@
+<div class="container-fluid g-0">
+  <app-headercompany></app-headercompany>
+</div>
+<div class="flex-container">
+  <div class="flex-item1"> <!-- First vertical part -->
+    <div>
+      <ul>
+      <li>
+      <div>
+        <a (click)="getdashboard()">Dashboard</a>
+      </div>
+      </li>
+    <li>
+      <div>
+        <a (click)="getreports()">Reports</a>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a (click)="geteditprofile()">Edit Profile</a>
+      </div>
+    </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex-item2"> <!-- Second vertical part -->
+    <h2>Company EditProfile</h2>
+
+    <form #companyform="ngForm" (ngSubmit)="updateCompanyDetails()">
+      <label for="company_name">Company Name</label>
+      <input type="text" name="companyName" id="companyName" [(ngModel)]="companyDetails.company_name"><br><br>
+
+      <label for="company_address">Company Address</label>
+      <input type="text" name="companyAddress"  id="address" [(ngModel)]="companyDetails.company_address"><br><br>
+
+      <label for="total_parking">Total Parking</label>
+      <input type="number" name="totalParking" id="totalParking" [(ngModel)]="companyDetails.total_parking" ><br><br>
+
+      <label for="two_wheel_parking">Two Wheel Parking</label>
+      <input type="number" name="twoWheelerParking" id="twoWheelerParking" [(ngModel)]="companyDetails.two_wheel_parking" ><br><br>
+
+      <label for="four_wheel_parking">Four Wheel Parking</label>
+      <input type="number" name="fourWheelerParking" id="fourWheelerParking" [(ngModel)]="companyDetails.four_wheel_parking" ><br><br>
+
+      <label for="two_wheel_charge">Two Wheel Parking Charge</label>
+      <input type="number" name="twoWheelerParkingCharge"  id="twoWheelerParkingCharge" [(ngModel)]="companyDetails.two_wheel_charge" ><br><br>
+
+      <label for="four_wheel_charge">Four Wheel Parking Charge</label>
+      <input type="number" name="fourWheelerParkingCharge"  id="fourWheelerParkingCharge" [(ngModel)]="companyDetails.four_wheel_charge" ><br><br>
+
+      <label for="two_wheel_penalty">Two Wheel Penalty</label>
+      <input type="number" name="twoWheelerPenalty" id="twoWheelerPenalty" [(ngModel)]="companyDetails.two_wheel_penalty" ><br><br>
+
+      <label for="four_wheel_penalty">Four Wheel Penalty</label>
+      <input type="number" name="fourWheelerPenalty"  id="fourWheelerPenalty" [(ngModel)]="companyDetails.four_wheel_penalty"><br><br>
+
+      <label for="watchman_email_id">Watchman Email ID</label>
+      <input type="email"  name="watchmanEmailId" id="watchmanEmailId" ngModel [(ngModel)]="companyDetails.watchman_emailid"><br><br>
+
+      <label for="watchman_password">Watchman Password</label>
+      <input type="password" name="watchmanPassword"  id="watchmanPassword" [(ngModel)]="companyDetails.watchman_password" ><br><br>
+
+      <label for="company_email_id">Company Email ID</label>
+      <input type="email" name="companyEmailId"  id="companyEmailId" [(ngModel)]="companyDetails.company_email_id" ><br><br>
+
+      <label for="company_password">Company Password</label>
+      <input type="password" name="companyPassword"  id="companyPassword" [(ngModel)]="companyDetails.company_password" ><br><br>
+
+      <input type="text" name="companyContactNo" id="companyContactNo" [(ngModel)]="companyDetails.company_contact_no" ><br><br>
+      <button type="submit" >Save</button>
+      <button>Cancel</button>
+    </form>
+  </div>
+  </div>

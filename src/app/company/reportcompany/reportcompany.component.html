@@ -1,0 +1,31 @@
+<div class="container-fluid g-0">
+    <app-headercompany></app-headercompany>
+</div>
+<div class="flex-container">
+    <div class="flex-item1"> <!-- First vertical part -->
+      <div>
+        <ul>
+        <li>
+        <div>
+          <a (click)="getdashboard()">Dashboard</a>
+        </div>
+        </li>
+      <li>
+        <div>
+          <a (click)="getreports()">Reports</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a (click)="geteditprofile()">Edit Profile</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex-item2"> <!-- Second vertical part -->
+      <h2>Company Reports</h2>
+      <div id="chartid"></div>
+    </div>
+  </div>
+  

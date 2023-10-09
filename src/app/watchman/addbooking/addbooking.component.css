@@ -1,0 +1,22 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-item1 {
+    flex-basis: 200px;
+  
+  }
+  .flex-item2{
+    flex-basis:88%;
+  }
+  .clsofcollectionspots
+  {
+      display:flex;
+      margin-left: 5px;
+  }
+  .clsofspots
+  {
+    margin-left: 10px;
+    background-color: paleturquoise;
+  }
